@@ -12,4 +12,3 @@ def cdb_init():
     args = parser.parse_args()
     logger.info("Tables created")
     return 0
-
