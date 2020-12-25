@@ -15,12 +15,12 @@ env:
   matrix:
     - API_CONFIG=tests/api_couch.yaml
     - API_CONFIG=tests/api_mongo.yaml
-    - API_CONFIG=tests/api_rethink.yaml
 before_install:
   - pip install -U pip wheel
   - pip install -r requirements.txt
-  - pip install -r requirements_test.txt
+  - pip install -r requirements-test.txt
 install:
+  - python setup.py install
   - cdb_init tests/keyring/root.json
 script:
   - pytest
