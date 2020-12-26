@@ -2,19 +2,13 @@ language: python
 sudo: required
 before_script:
   - sudo apt-get -qq update
-python:
-  - "3.8"
 services:
-  - couchdb
   - mongodb
 addons:
   rethinkdb: '2.4'
 env:
   global:
     - TZ=Europe/Kiev
-  matrix:
-    - API_CONFIG=tests/api_couch.yaml
-    - API_CONFIG=tests/api_mongo.yaml
 before_install:
   - pip install -U pip wheel
   - pip install -r requirements.txt
